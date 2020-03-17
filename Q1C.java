@@ -1,27 +1,39 @@
-   class B {
+class Parent {
    String value;
-   public B(){
-   value = "B";
+
+   Parent(String value) {
+      this.value = value;
    }
 
-   public B add(C c){
-
-   }
-   public String toString(){
-   return this.value;
-   }
+   Parent add(Parent value) {
+      return new Parent(this.value + value);
    }
 
-   class C{
+   public String toString() {
+      return this.value;
+   }
+}
+
+class B extends Parent {
    String value;
-   public C(){
-   this.value = "C";
+
+   public B() {
+      super("B");
    }
 
-   public C add(){
+   public String toString() {
+      return super.toString();
+   }
+}
+
+class C extends Parent {
+   String value;
+
+   public C() {
+      super("C");
    }
 
-   public String toString(){
-   return this.value;
+   public String toString() {
+      return super.toString();
    }
-   }
+}

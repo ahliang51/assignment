@@ -1,25 +1,28 @@
-   import java.util.Map;
-   import java.util.Set;
+import java.util.Map;
+import java.util.Set;
 
-   Enum Nature{
-   CASUAL,CLOSE,FAMILY
-   }
+enum Nature {
+   CASUAL, CLOSE, FAMILY
+}
 
-   class Contact{
-    Map<Contact,Nature> list = new Map<>();
-   }
+class Contact {
+   Enum<Nature> nature;
+   Case case1;
+   Case case2;
+}
 
-   class Case{
-    private int id;
-   private Contact allContacts;
-   }
-   class Cluster{
+class Case {
+   private int id;
+}
+
+class Cluster {
+   private String name;
    private Set<Case> clusterCases;
-   }
+}
 
-   class Imported extends Case{
-    private String origin;
-   }
+class ImportedCase extends Case {
+   private String origin;
+}
 
-   class Local extends Case{
-   }
+class Local extends Case {
+}
